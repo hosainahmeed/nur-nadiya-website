@@ -7,9 +7,8 @@ const { Content } = Layout;
 
 export default function LoginPage() {
   return (
-    <Layout className="min-h-screen">
-      <Content className="flex items-center justify-center bg-white">
-
+    <Layout className="!h-screen !bg-white">
+      <Content className="flex items-center justify-center bg-white container mx-auto">
         <div className="hidden lg:flex lg:w-1/2 xl:w-3/5 h-screen relative">
           <div className="w-full h-screen flex items-center justify-center">
             <Image
@@ -17,7 +16,7 @@ export default function LoginPage() {
               alt="Decorative illustration"
               width={800}
               height={800}
-              className="object-contain max-h-full"
+              className="object-left-bottom object-cover w-full h-full"
               priority
             />
           </div>
@@ -103,7 +102,7 @@ export default function LoginPage() {
                   htmlType="submit"
                   size="large"
                   block
-                  className="h-11 font-medium"
+                  className="!h-11 !text-white bg-pink font-medium"
                 >
                   Sign in
                 </Button>
@@ -115,7 +114,7 @@ export default function LoginPage() {
                 <Button
                   size="large"
                   block
-                  className="h-11 font-medium flex items-center justify-center"
+                  className="!h-11 font-medium flex items-center justify-center"
                 >
                   <Image
                     src="/icons/google.svg"

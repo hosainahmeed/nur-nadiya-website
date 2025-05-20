@@ -116,7 +116,16 @@
   * {
     @apply border-border outline-ring/50;
   }
+  .text-pink {
+    @apply !text-[#9333EA]
+  }
+  .bg-pink {
+    @apply !bg-[#9333EA]
+  }
   body {
     @apply bg-background text-foreground;
   }
+}
+body{
+  background-color: white !important;
 }
