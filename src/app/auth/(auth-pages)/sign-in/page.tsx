@@ -1,4 +1,5 @@
 'use client';
+import AuthImage from '@/components/ui/auth_component/AuthImage';
 import { Button, Input, Divider, Typography, Form, Layout, Space } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,14 +12,7 @@ export default function LoginPage() {
       <Content className="flex items-center justify-center bg-white container mx-auto">
         <div className="hidden lg:flex lg:w-1/2 xl:w-3/5 h-screen relative">
           <div className="w-full h-screen flex items-center justify-center">
-            <Image
-              src="/board.png"
-              alt="Decorative illustration"
-              width={800}
-              height={800}
-              className="object-left-bottom object-cover w-full h-full"
-              priority
-            />
+            <AuthImage />
           </div>
         </div>
 
@@ -131,7 +125,7 @@ export default function LoginPage() {
                     Don&#39;t have an account?{' '}
                     <Link
                       href="/auth/sign-up"
-                      className="font-medium hover:underline"
+                      className="font-medium text-pink hover:underline"
                     >
                       Sign up
                     </Link>
