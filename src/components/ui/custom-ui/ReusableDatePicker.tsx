@@ -1,15 +1,15 @@
 import React from 'react';
-import { Input, Form } from 'antd';
+import { DatePicker, Form } from 'antd';
 import type { Rule } from 'antd/es/form';
-import type { InputProps } from 'antd/es/input';
+import type { DatePickerProps } from 'antd/es/date-picker';
 
-interface ReusableInputProps extends InputProps {
+interface ReusableDatePickerProps extends DatePickerProps {
   label: string;
   name: string;
   rules?: Rule[];
 }
 
-const ReusableInput: React.FC<ReusableInputProps> = ({
+const ReusableDatePicker: React.FC<ReusableDatePickerProps> = ({
   label,
   name,
   rules,
@@ -17,7 +17,7 @@ const ReusableInput: React.FC<ReusableInputProps> = ({
 }) => {
   return (
     <Form.Item label={label} name={name} rules={rules}>
-      <Input
+      <DatePicker
         style={{
           width: '100%',
           height: 34,
@@ -35,4 +35,4 @@ const ReusableInput: React.FC<ReusableInputProps> = ({
   );
 };
 
-export default ReusableInput;
+export default ReusableDatePicker;

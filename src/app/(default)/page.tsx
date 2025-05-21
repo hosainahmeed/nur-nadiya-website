@@ -1,41 +1,18 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-'use client'
-import ReusableInput from '@/components/ui/custom-ui/ReusableInput';
-import { Button, Form } from 'antd';
+import LandlordForm from '@/components/default/Sections/hero/Form-submission/LandlordForm';
+import TenentForm from '@/components/default/Sections/hero/Form-submission/TenantForm';
 import React from 'react';
 
-function Page() {
-  const [form] = Form.useForm();
-
-  const onFinish = (values: any) => {
-    console.log('Form values:', values);
-  };
+function page() {
   return (
-    <div className="my-28">
-      <Form form={form} onFinish={onFinish} layout="vertical">
-        <ReusableInput
-          label="Username"
-          name="username"
-          placeholder="Enter your username"
-          rules={[{ required: true, message: 'Please input your username!' }]}
-        />
-        <ReusableInput
-          label="Email"
-          name="email"
-          placeholder="Enter your email"
-          rules={[
-            { required: true, message: 'Please input your email!' },
-            { type: 'email', message: 'Please enter a valid email!' },
-          ]}
-        />
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
+    <div className="container flex items-center gap-2 lg:flex-row flex-col justify-between mx-auto my-28">
+      <div className="flex-1">
+        <TenentForm />
+      </div>
+      <div className="flex-1">
+        <LandlordForm />
+      </div>
     </div>
   );
 }
 
-export default Page;
+export default page;

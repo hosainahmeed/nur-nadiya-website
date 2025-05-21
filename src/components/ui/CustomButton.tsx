@@ -1,21 +1,23 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 
 interface Ibutton {
   label: string;
+  icon?: any;
   ctaFn?: () => void;
   className?: string;
 }
 
-function CustomButton({ label, ctaFn, className }: Ibutton) {
+function CustomButton({ label, ctaFn, className, icon }: Ibutton) {
   return (
-    <div className="px-6 py-4 !w-full">
+    <div className="!w-full">
       <button
-        className={`w-full cursor-pointer bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-4 rounded-md text-xl transition duration-200 ${
+        className={`w-full flex items-center justify-center gap-2 cursor-pointer bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-4 rounded-md text-xl transition duration-200 ${
           className || ''
         }`}
         onClick={ctaFn}
       >
-        {label}
+        {icon} {label}
       </button>
     </div>
   );
