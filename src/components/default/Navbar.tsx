@@ -49,7 +49,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm border-b border-gray-100 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -71,9 +71,9 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'text-sm font-medium transition-colors border-[var(--primary-color)] px-6 py-3 hover:text-blue-600',
+                  'text-sm font-medium transition-colors border-[var(--primary-color)] px-6 py-3 rounded-sm hover:text-blue-600',
                   isActive(item.href)
-                    ? 'text-black bg-white '
+                    ? 'text-black bg-[#FAF5FF] border-2 border-purple-600 '
                     : 'text-gray-700',
                   item.disabled && 'cursor-not-allowed opacity-50'
                 )}
