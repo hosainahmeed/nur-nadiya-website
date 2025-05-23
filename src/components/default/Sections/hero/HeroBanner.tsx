@@ -4,14 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Facebook, Twitter, Instagram } from 'lucide-react';
 
 const HeroBanner = () => {
-  const socialLinks = [
-    { icon: <Facebook size={20} />, href: '#', label: 'Facebook' },
-    { icon: <Twitter size={20} />, href: '#', label: 'Twitter' },
-    { icon: <Instagram size={20} />, href: '#', label: 'Instagram' },
-  ];
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-[#111]">
@@ -20,7 +14,7 @@ const HeroBanner = () => {
         <Image
           width={1920}
           height={1080}
-          src="/amurphy/PublicHomePagePic1.jpg"
+          src="/main.jpg"
           alt="Heritage landscape"
           className="h-full w-full object-cover brightness-[0.65]"
           priority
@@ -29,18 +23,7 @@ const HeroBanner = () => {
       </div>
 
       {/* Content container */}
-      <div className="relative z-10 container mx-auto flex h-full flex-col pb-5 items-start justify-center px-4 text-start !text-white">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="mb-6 rounded-full bg-white/90 px-6 py-2 backdrop-blur-sm"
-        >
-          <h1 className="text-sm font-medium leading-none text-black capitalize">
-            Join for full access
-          </h1>
-        </motion.div>
+      <div className="relative z-10 container mx-auto flex h-full flex-col pb-5 items-center justify-center px-4 text-center !text-white">
 
         {/* Main heading with animated underline */}
         <div className="relative mb-4">
@@ -50,7 +33,7 @@ const HeroBanner = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            Preserving Our Past. Inspiring Our Future.
+            Rent A Home in Singapore
           </motion.h1>
         </div>
 
@@ -61,8 +44,7 @@ const HeroBanner = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-8 max-w-4xl text-lg !text-white/80 sm:text-xl md:text-2xl"
         >
-          Honoring our history while shaping a brighter future. Together, we
-          preserve the past and inspire tomorrow&lsquo;s possibilities.
+          Seamless Property Search, Inquiry & Agent Connection—All in One Place.Browse listings, submit rental inquiries instantly, and connect with trusted agents—no login required.
         </motion.p>
 
         {/* CTA Button */}
@@ -71,39 +53,13 @@ const HeroBanner = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
-          className="mb-12 rounded-full border border-dashed border-white/30 p-2"
+          className="mb-12 rounded-md border border-dashed border-white/30 p-2"
         >
           <Link href={'/auth/sign-in'}>
-            <Button className="!rounded-full bg-[#072A5E] px-10 pt-6 pb-7 text-xl font-semibold transition-all duration-300 hover:bg-[#0A3A7D] hover:shadow-lg hover:shadow-blue-900/30 sm:px-12 sm:text-2xl md:px-16 md:text-3xl">
-              Get Started
+            <Button className="!rounded-md bg-pink px-10 pt-6 pb-7 text-xl font-semibold transition-all duration-300 hover:bg-pink hover:shadow-lg hover:shadow-blue-900/30 sm:px-12 sm:text-2xl md:px-16 md:text-3xl">
+              Start Now
             </Button>
           </Link>
-        </motion.div>
-
-        {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="flex space-x-4"
-        >
-          {socialLinks.map((social, index) => (
-            <motion.div
-              key={social.label}
-              whileHover={{ y: -5, scale: 1.1 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.9 + index * 0.1 }}
-            >
-              <Link
-                href={social.href}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 !text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-                aria-label={social.label}
-              >
-                {social.icon}
-              </Link>
-            </motion.div>
-          ))}
         </motion.div>
       </div>
 
