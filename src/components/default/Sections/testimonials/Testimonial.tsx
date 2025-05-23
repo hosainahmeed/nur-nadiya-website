@@ -76,7 +76,7 @@ const Testimonial: React.FC = () => {
 
   return (
     <section className="container mx-auto !my-28">
-      <div className="container">
+      <div>
         <Slider {...settings} className="testimonial-slider">
           {testimonials.map(({ name, image, text }, index) => (
             <div className="item" key={index}>
@@ -107,7 +107,7 @@ const Testimonial: React.FC = () => {
                     </span>
                   ))}
                 </div>
-                <p>{text}</p>
+                <p className='!text-sm'>{text}</p>
               </div>
             </div>
           ))}
